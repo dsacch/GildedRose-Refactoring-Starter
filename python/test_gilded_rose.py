@@ -26,7 +26,21 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEqual(6, items[0].quality)
         self.assertEqual(3, items[0].sell_in)
 
-        
+    def test_Elixir_of_the_Mongoose(self):
+        items = [Item("Elixir of the Mongoose", 4, 3)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEqual(2, items[0].quality)
+        self.assertEqual(3, items[0].sell_in)
+
+    def test_Elixir_of_the_Mongoose(self):
+        items = [Item("Conjured Elixir of the Mongoose", 4, 3)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEqual(1, items[0].quality)
+        self.assertEqual(3, items[0].sell_in)
+
+
 if __name__ == '__main__':
     unittest.main()
 
